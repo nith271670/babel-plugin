@@ -56,8 +56,7 @@
     "dev": "npm build && nodemon example.js",
     "dev:debug": "npm build && ndb example.js",
     "start": "npm build && node example.js",
-    "test": "jest",
-    "postbuild": "echo I run after the build script"
+    "test": "jest"
   },
   "version": "0.0.1"
 }

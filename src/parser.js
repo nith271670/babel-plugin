@@ -65,10 +65,6 @@ var uuid_exist = false;
 
    currentNode.children.forEach(function (node, i) {
     reduceAstNode(oldNode, node)
-
-    // if(i == currentNode.children.length-1){
-    //   saveText( JSON.stringify(oldNode), "filename.json" );
-    // }
 });
 
 
