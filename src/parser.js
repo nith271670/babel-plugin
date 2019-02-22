@@ -6,7 +6,8 @@ var uuid_exist = false;
  function reduceAstNode(oldNode, currentNode){
   
    let element = {};  
-  if (currentNode.type === 'JSXElement') {
+  if(currentNode !=undefined){
+   if (currentNode.type === 'JSXElement') {
       if(currentNode.openingElement.name.name == "Label"){
          if(currentNode.openingElement.attributes.length>0){
             
@@ -55,8 +56,11 @@ var uuid_exist = false;
 
    
   }
+  }
 
  
+  if(currentNode != undefined){
+     
   if ('children' in currentNode) {
 
    currentNode.children.forEach(function (node, i) {
@@ -69,6 +73,7 @@ var uuid_exist = false;
 
 
   }
+  }
 
 
   return oldNode;
@@ -80,11 +85,18 @@ export const getTree = (content) => {
     sourceType: 'module',
     plugins: ['jsx'],
   });
-  const initialAst = rawAst.program.body.find(
-    (astNode) => astNode.type === 'ExportNamedDeclaration',
-  ).declaration.declarations[0].init.body.body[0].argument;
+  if(rawAst.program.body.find((astNode) => astNode.type === 'ExportNamedDeclaration',) != undefined)
+ {
+   const initialAst = rawAst.program.body.find(
+      (astNode) => astNode.type === 'ExportNamedDeclaration',
+    ).declaration.declarations[0].init.body.body[0].argument;
+    return reduceAstNode([], initialAst);
+ }
+ else{
+    return [];
+ }
 
-  return reduceAstNode([], initialAst);
+  
 };
 
 export default {

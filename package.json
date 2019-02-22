@@ -6,6 +6,9 @@
   },
   "dependencies": {
     "@babel/parser": "^7.1.3",
+    "glob": "^7.1.3",
+    "recursive-readdir": "^2.2.2",
+    "recursive-readdir-filter": "0.0.3",
     "rollup-plugin-node-resolve": "^4.0.0"
   },
   "description": "",
@@ -50,9 +53,9 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "npm build && nodemon ./example/example.js",
-    "dev:debug": "npm build && ndb ./example/example.js",
-    "start": "npm build && node ./example/example.js",
+    "dev": "npm build && nodemon example.js",
+    "dev:debug": "npm build && ndb example.js",
+    "start": "npm build && node example.js",
     "test": "jest",
     "postbuild": "echo I run after the build script"
   },

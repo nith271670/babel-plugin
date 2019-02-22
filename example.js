@@ -1,15 +1,19 @@
 const fs = require('fs');
-const { getTree } = require('../dist/jsx-to-simple-ast.cjs.js');
+const { getTree } = require('./dist/jsx-to-simple-ast.cjs.js');
 
 
 // const content = fs.readFileSync(__dirname + '/Welcome/index.js', 'utf8');
 // const result = getTree(content);
 // console.log(JSON.stringify(result));
 
-var dir = __dirname + '/Welcome/';
+var dir = __dirname + '/src/';
 
 var result = [];
-
+fs.writeFile('myfile.json', JSON.stringify(result, null, "\t"), (err) => {
+  if (err) throw err
+  console.log('empty file created');
+  console.log(err);
+})
 // fs.readdirSync(dir).forEach(function (file, i) {
 //     const content = fs.readFileSync(dir+ file, 'utf8');
 //     result[i] = getTree(content);      
