@@ -53,10 +53,10 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "npm build && nodemon example.js",
-    "dev:debug": "npm build && ndb example.js",
-    "start": "npm build && node example.js",
-    "test": "jest"
+    "dev": "npm build && nodemon label_extractor.js",
+    "dev:debug": "npm build && ndb label_extractor.js",
+    "start": "npm build && node label_extractor.js",
+    "test": "jest --coverage"
   },
   "version": "0.0.3"
 }
