@@ -2,7 +2,7 @@
   "author": "",
   "browser": "dist/jsx-to-simple-ast.umd.js",
   "bugs": {
-    "url": "https://github.com/igeligel/parse-react-components/issues"
+    "url": "https://github.com/nith271670/babel-plugin.git/issues"
   },
   "dependencies": {
     "@babel/parser": "^7.1.3",
@@ -25,7 +25,7 @@
     "regenerator-runtime": "^0.13.1",
     "rollup": "^0.67.3"
   },
-  "homepage": "https://github.com/igeligel/parse-react-components#readme",
+  "homepage": "https://github.com/nith271670/babel-plugin.git#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -46,10 +46,10 @@
   },
   "main": "dist/jsx-to-simple-ast.cjs.js",
   "module": "dist/jsx-to-simple-ast.esm.js",
-  "name": "jsx-to-simple-ast",
+  "name": "extract-tag-using-babel",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igeligel/jsx-to-simple-ast.git"
+    "url": "git+https://github.com/nith271670/babel-plugin.git"
   },
   "scripts": {
     "build": "rollup -c",
@@ -58,5 +58,5 @@
     "start": "npm build && node example.js",
     "test": "jest"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
