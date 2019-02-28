@@ -60,5 +60,5 @@
     "start": "npm build && node label_extractor.js",
     "test": "jest --coverage"
   },
-  "version": "0.0.3"
+  "version": "1.0.0"
 }
