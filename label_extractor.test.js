@@ -1,15 +1,13 @@
 // import {getTree} from './label_extractor';
-import { welcomeComponent, customComponent } from './src/tests/constants';
+// import { welcomeComponent, customComponent } from './src/tests/constants';
 const getTree = require('./label_extractor');
 describe('Get Tree', () => {
-  const babelParser = require('@babel/parser');
+  // const babelParser = require('@babel/parser');
   it('should return a proper tree of jsx elements for the welcome component', () => {
-    const dir = __dirname + '/src/';
+    const dir = __dirname + '/src/tests';
     console.log(dir);
-
     const result = getTree(dir);
     console.log(result);
-
     expect(result).toEqual([
       {
         'label-4': {
