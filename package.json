@@ -1,12 +1,14 @@
 {
   "author": "",
-  "browser": "dist/jsx-to-simple-ast.umd.js",
+  "browser": "",
   "bugs": {
     "url": "https://github.com/nith271670/babel-plugin.git/issues"
   },
   "dependencies": {
     "@babel/parser": "^7.1.3",
+    "cheerio": "^1.0.0-rc.2",
     "glob": "^7.1.3",
+    "node-html-parser": "^1.1.12",
     "recursive-readdir": "^2.2.2",
     "recursive-readdir-filter": "0.0.3",
     "rollup-plugin-node-resolve": "^4.0.0"
@@ -44,8 +46,8 @@
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     }
   },
-  "main": "dist/jsx-to-simple-ast.cjs.js",
-  "module": "dist/jsx-to-simple-ast.esm.js",
+  "main": "",
+  "module": "",
   "name": "extract-tag-using-babel",
   "repository": {
     "type": "git",
