@@ -39,7 +39,7 @@ function getTree(dir) {
               JSON.stringify(result, null, '\t'),
               (err) => {
                 if (err) throw err;
-                console.log(err);
+                // console.log(err);
               },
             );
           });
