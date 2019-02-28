@@ -1,38 +1,15 @@
 {
-  "label-4": {
-    "class": "label",
-    "description": "desc4",
-    "name": "label444"
-  },
-  "abc_lab1": {
-    "description": "abc_lab11",
-    "name": "abc_lab11"
-  },
-  "abc_lab12": {
-    "name": "abc_lab2",
-    "description": "abc_lab12"
-  },
-  "e64caea6-f2d1-4709-b974-0fca7e4fe7fa": {
-    "description": "add your description here"
-  },
-  "aaa": {
-    "description": "desc1"
-  },
-  "s1s": {
-    "description": "desc6"
-  },
-  "label1": {
-    "description": "desc1",
-    "name": "name1"
-  },
-  "label2": {
-    "name": "name2",
-    "description": "desc2"
-  },
-  "ss": {
-    "description": "desc4"
-  },
-  "abc": {
-    "description": "desc5"
-  }
+	"label-4": {
+		"class": "label",
+		"description": "desc4",
+		"name": "label444"
+	},
+	"abc_lab1": {
+		"description": "abc_lab11",
+		"name": "abc_lab11"
+	},
+	"abc_lab12": {
+		"name": "abc_lab2",
+		"description": "abc_lab12"
+	}
 }

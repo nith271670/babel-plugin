@@ -1,43 +1,38 @@
-// import {getTree} from './label_extractor';
-// import { welcomeComponent, customComponent } from './src/tests/constants';
-const getTree = require('./label_extractor');
-describe('Get Tree', () => {
-  // const babelParser = require('@babel/parser');
-  it('should return a proper tree of jsx elements for the welcome component', () => {
-    const dir = __dirname + '/src/tests';
-    console.log(dir);
-    const result = getTree(dir);
-    console.log(result);
-    expect(result).toEqual([
-      {
-        'label-4': {
-          class: 'label',
-          description: 'desc4',
-          name: 'label444',
-        },
-      },
-    ]);
-  });
+const getTree = require("./getTree");
+const dir = __dirname + '/src/tests';
+getTree(dir);
 
-  xit('should return a proper tree of jsx elements for the welcome component', () => {
-    const result = getTree(customComponent);
-    expect(result).toEqual([
-      {
-        children: [
-          {
-            children: [
-              { children: [], name: 'p' },
-              {
-                children: [{ children: [], name: 'span' }],
-                name: 'TestComponent',
-              },
-            ],
-            name: 'div',
+
+ 
+setTimeout(traverse,10000)
+  
+function traverse(){
+  var json = require('./labelList.json');
+  if(json){
+    describe('Get Tree', () => {
+      it('should return a proper tree of jsx elements for the welcome component', () => {
+        
+      
+        const result = json;
+        console.log(result);
+        expect(result).toEqual({
+          "label-4": {
+            "class": "label",
+            "description": "desc4",
+            "name": "label444"
           },
-          { children: [], name: 'h1' },
-        ],
-        name: 'div',
-      },
-    ]);
-  });
-});
+          "abc_lab1": {
+            "description": "abc_lab11",
+            "name": "abc_lab11"
+          },
+          "abc_lab12": {
+            "name": "abc_lab2",
+            "description": "abc_lab12"
+          }
+        });
+      });
+    });
+}
+
+}
+
