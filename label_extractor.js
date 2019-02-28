@@ -69,4 +69,4 @@ recursive(dir, options, function(err, files) {
 
 }
 
-console.log(getTree(dir));
+getTree(dir);
