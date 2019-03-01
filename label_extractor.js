@@ -13,5 +13,5 @@ var dir = path.resolve(path.resolve(__dirname));
 dir = dir + '/src/';
 
 
-getTree(dir);
+console.log(getTree(dir));
 

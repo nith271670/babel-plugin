@@ -1,27 +1,39 @@
 const fs = require('fs');
 var recursive = require('recursive-readdir-filter');
 var Parser = require('node-html-parser');
-
+var finalt = [];
 function getTree(dir) {
     
     var result = {};
+   var finalt = [];
   
     var options = {
       filterDir: function(stats) {
         return stats.name !== 'node_modules';
       },
       filterFile: function(stats) {
-        return stats.name.match(/\.tsx$ || \.js$ || \.ts$ || \.html$/);
+        if(stats.name.match(/\.tsx$/)){
+          return stats.name.match(/\.tsx$/);
+        }
+        else  if(stats.name.match(/\.ts$/)){
+          return stats.name.match(/\.ts$/);
+        }
+        else  if(stats.name.match(/\.js$/)){
+          return stats.name.match(/\.js$/);
+        }
+        else  if(stats.name.match(/\.html$/)){
+          return stats.name.match(/\.html$/);
+        }        
+        
       },
     };
   
     recursive(dir, options, function(err, files) {
-      // `files` is an array of file paths
+       finalt = [];
+
       files.forEach((file) => {
-        const content = fs.readFileSync(file, 'utf8');
-        if (file != undefined) {
-          fs.readFile(file, 'utf8', function(err, contents) {
-            var root = Parser.parse(contents);
+            var root = Parser.parse(fs.readFileSync(file, 'utf8'));
+            
             var label_obj = root.querySelectorAll('Label');
   
             label_obj.forEach((labelAttr) => {
@@ -32,20 +44,23 @@ function getTree(dir) {
                 result[uuid] = attrs;
               }
             });
-            JSON.stringify(result, null, '\t');
+            finalt.push(result);
   
-            fs.writeFile(
-              'labelList.json',
-              JSON.stringify(result, null, '\t'),
-              (err) => {
-                if (err) throw err;
-                // console.log(err);
-              },
-            );
-          });
-        }
+            
+      
       });
+      fs.writeFile(
+        'labelList.json',
+        JSON.stringify(finalt[finalt.length-1], null, '\t'),
+        (err) => {
+          if (err) throw err;
+          // console.log(err);
+        },
+      );
+
     });
+
+
   }
 
   
