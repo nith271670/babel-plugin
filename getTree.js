@@ -2,6 +2,7 @@ const fs = require('fs');
 var recursive = require('recursive-readdir-filter');
 var Parser = require('node-html-parser');
 var result = {};
+
 //check for uuid
 function extractAttr(labelAttr) {
   if (labelAttr.uuid != undefined) {
@@ -9,15 +10,16 @@ function extractAttr(labelAttr) {
     var uuid = attrs.uuid;
     delete attrs.uuid;
     result[uuid] = attrs;
-    // console.log(result);
     return result;
   }
 }
+//write to file
 function writeToFile(result) {
   fs.writeFile('labelList.json', JSON.stringify(result, null, '\t'), (err) => {
     if (err) throw err;
   });
 }
+
 //read a file and check for Label
 function readEachFile(file) {
   if (file != undefined) {
@@ -25,18 +27,14 @@ function readEachFile(file) {
       var root = Parser.parse(contents);
       var label_obj = root.querySelectorAll('Label');
       label_obj.forEach((labelAttr) => {
-        // console.log(labelAttr.attributes);
-
         extractAttr(labelAttr.attributes);
       });
-      // JSON.stringify(result, null, '\t');
-      console.log(result);
-
       writeToFile(result);
     });
   }
 }
 
+//traverse to the files in the folders
 function getTree(dir) {
   var options = {
     filterDir: function(stats) {
@@ -57,7 +55,6 @@ function getTree(dir) {
   recursive(dir, options, function(err, files) {
     // `files` is an array of file paths
     files.forEach((file) => {
-      // const content = fs.readFileSync(file, 'utf8');
       readEachFile(file);
     });
     return files;
