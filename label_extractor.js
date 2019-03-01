@@ -1,4 +1,4 @@
-const getTree = require("./getTree");
+const { getTree } = require('./getTree');
 
 var path = require('path');
 
@@ -12,6 +12,4 @@ var dir = path.resolve(path.resolve(__dirname));
 // }
 dir = dir + '/src/';
 
-
 console.log(getTree(dir));
-
